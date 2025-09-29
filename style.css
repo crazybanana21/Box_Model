@@ -1,0 +1,129 @@
+/* style.css */
+
+/* Basic body styling for better readability */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navigation Menu Styling */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Makes navigation items horizontal */
+    justify-content: center; /* Centers navigation items */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+    max-width: 960px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Box Model Activity Styling */
+.box-container {
+    display: flex; /* To arrange boxes side-by-side */
+    justify-content: space-around; /* Distribute space around items */
+    margin-top: 30px;
+    flex-wrap: wrap; /* Allow boxes to wrap to the next line if needed */
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    /* Remove default margins for paragraphs inside boxes */
+    margin-bottom: 0; /* Ensures box margins are controlled explicitly */
+    margin-top: 0; /* Ensures box margins are controlled explicitly */
+}
+
+/* 1st div styling */
+.box1 {
+    background-color: cadetblue;
+    padding: 20px; /* 20px padding all around */
+    border: 10px solid black; /* 10px black border */
+    /* The paragraph inside the first div needs its margins removed */
+}
+
+.box1 p {
+    margin: 0; /* Fix the style of the <p> element to remove all margins */
+}
+
+/* 2nd div styling */
+.box2 {
+    background-color: gold;
+    border-top: 20px solid black; /* 20px border on top */
+    border-bottom: 10px solid black; /* 10px border on bottom */
+    border-left: 20px solid black; /* 20px border on left */
+    border-right: 20px solid black; /* 20px border on right */
+}
+
+/* 3rd div styling */
+.box3 {
+    background-color: indianred;
+    border: 10px solid black; /* 10px border */
+}
+
+/* Set margins for the divs so that each box touches the other. */
+/* This can be achieved by setting negative margins or carefully calculating.
+   Given the instruction "each box touches the other", we can use specific margins. */
+/* For this to work perfectly without flex-gap, we need to ensure the margins are zero
+   between them or precisely negative to overlap borders. Let's assume zero margin
+   between them is the intended "touching" without overlapping content.
+   If true border overlapping is desired, it'd be more complex.
+   For now, we'll ensure minimal space for "touching". */
+.box-container .box {
+    margin: 0; /* No margin between the boxes */
+}
+
+/* If you want them to literally touch side-by-side without any space, ensure no justify-content: space-around */
+/* Let's remove space-around if touching means no gap at all. */
+/* To make them truly touch and align as per the goal image (which implies a row),
+   we'll modify the .box-container slightly and ensure consistent box sizing. */
+
+.box-container {
+    display: flex;
+    /* justify-content: flex-start; /* Align them to the start to remove space around */
+    gap: 0; /* Ensures no gap between flex items */
+    flex-wrap: nowrap; /* Keep them in a single line if possible */
+}
